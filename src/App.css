@@ -7,7 +7,17 @@
 .appAside {
   width: 50%;
   background-color: #3830FF;
+  padding: 25px 40px;
+  overflow: auto;
+  color: #ffffff;
+  font-family: Montserrat-Bold;
+  font-size: 80px;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 15%;
 }
+
 
 .appForm {
   width: 50%;
@@ -21,6 +31,46 @@
   justify-content: flex-end;
   margin-bottom: 10%;
 }
+
+.input100 {
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #333333;
+  border: 1px solid #909096;
+  display: block;
+  width: 100%;
+  background: #fff;
+  height: 50px;
+  border-radius: 12px;
+  padding: 0 30px 0 53px;
+  margin: 10px;
+}
+
+.login100-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 20%;
+}
+
+.loginButton {
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  border: 1px solid #909096;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  padding: 0 30px 0 53px;
+  margin: 10px;
+  background: #3830FF;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 
 .toggleSwitch {
   background-color: #ffffff;
@@ -65,3 +115,5 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+
+
