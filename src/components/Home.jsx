@@ -1,20 +1,17 @@
-import React, { Component } from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Nav from './NavBar'
+import React from 'react'
+// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 
-class Home extends Component {
-    render() {
-        return (
-            <Router> 
-            <div className="App">
-              <Nav/>
-              {/* HOME COMPONENT IS ACTIVATED ONCE THE USER SIGNS IN.  */}
-              {/* WILL BE THE MAIN WEBSITE */}
-            </div>
-          </Router>
-        )
-    }
-}
+const Home = () => (
+  <div>
+    <div>
+      <NavLink to='/pokemons'>Pokemons</NavLink>
+    </div>
+    <div>
+      <NavLink to='/profile'>Account</NavLink>
+    </div>
+  </div>
+)
 
 export default Home
 

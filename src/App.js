@@ -1,7 +1,7 @@
 import React from 'react'
-// import {Switch, Route, withRouter} from 'react-router-dom'
+import {Switch, Route, withRouter} from 'react-router-dom'
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+// import {BrowserRouter as Router, Switch, Route, withRouter} from 'react-router-dom';
 import Nav from './components/NavBar'
 import Home from './components/Home'
 import LoginForm from './components/Login/Form'
@@ -59,7 +59,7 @@ class App extends React.Component {
   }
 
   handleLogin = (userInfo) => {
-    fetch("http://localhost:3000/login", {
+    fetch(`http://localhost:3000/users/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -81,20 +81,19 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state.pokemons);
-    
+    // console.log(this.state.pokemons);
     return (
       <div className="App">
-        <Router>
-           
-          {/* <Nav/> NAV BAR WILL GO IN THE HOME COMPONENT */}
-          <Route path='/' exact component={LoginForm}/>
-          <Route path='/register' component={RegisterForm}/>
-          <Route path='/home' component={Home}/>
-        </Router>
+      {/* Nav Bar should go here */}
+          <Switch>
+            {/* <Nav/> NAV BAR WILL GO IN THE HOME COMPONENT */}
+            <Route exact path='/' render={this.renderLoginForm}/>
+            <Route path='/register' render={this.renderRegisterForm}/>
+            <Route path='/home' component={Home}/>
+          </Switch>
         </div>
     )
   }
 }
 
-export default App;
+export default withRouter(App);

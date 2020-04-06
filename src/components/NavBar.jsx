@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {NavLink} from 'react-router-dom'
 
-class NavBar extends Component {
-    render() {
-        return (
-            <div>
-                <h1>TITLE</h1>
-                <h2> SEARCH BAR HERE </h2>
-                <h2> User</h2>
-            </div>
-        )
-    }
+const NavBar = () => {
+    return (
+        <ul className='navBar'>
+            <li>
+                <NavLink to='/pokemons'>Pokemons</NavLink> 
+                <NavLink to='/profile'>Account</NavLink>
+            </li>
+        </ul>
+    )
 }
 
 export default NavBar

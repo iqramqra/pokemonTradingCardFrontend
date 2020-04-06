@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Fragment } from 'react'
 
-class Register extends React.Component {
+class Register extends Component {
 
     state = {
         username:'',
@@ -37,21 +37,21 @@ class Register extends React.Component {
                 {/* RIGHT SIDE OF THE PAGE */}
                 <div className='appForm'>
                     {/* DIV FOR THE TOGGLE BUTTONS ON TOP OF PAGE */}
-                    <div className='pageSwitch'>
-                        <a href='#' className='toggleSwitch'> Sign In</a>
-                        <a href='#' className='toggleSwitchActive'> Sign Up</a>
-                    </div>
+                    {/* <div className='pageSwitch'>
+                        <a href='http://localhost:3001/' className='toggleSwitch'> Sign In</a>
+                        <a href='http://localhost:3001/register' className='toggleSwitchActive'> Sign Up</a>
+                    </div> */}
                     {/* START OF THE FORM */}
                     <div className='login100-form'>
-
                         <form onSubmit={this.handleSubmit}>
                             <input className='input100' type='text' name='username' placeholder='Username' value={username} onChange={this.handleChange}></input>
                             <input className='input100' type='password' name='password' placeholder='Password' value={password} onChange={this.handleChange}></input>
-                            <input className='loginButton' type='submit' value='Submit'/>
-                            {/* <button  type='submit'>Login</button> */}
+                            <input className='input100' type='text' name='bio' placeholder='A Fun Fact About Yourself' value={bio} onChange={this.handleChange}></input>
+                            <input className='input100' type='text' name='avatar' placeholder='URL link' value={avatar} onChange={this.handleChange}></input>
+                            <input className='loginButton' type='submit' placeholder='Register' value='Submit'/>
+                            {/* <button className='loginButton' type='submit' value='Submit'>Register</button> */}
                         </form>
                     </div>
-
                 </div>
             </Fragment>
         )
