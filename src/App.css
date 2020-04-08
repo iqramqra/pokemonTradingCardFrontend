@@ -116,4 +116,19 @@
   border-bottom-right-radius: 12px;
 }
 
+.pokePadding{
+  padding: 5%;
+  width: 100%;
+}
 
+.gutter{
+  margin: 5%;
+  width: 150px;
+  height: 150px;
+}
+
+.imgSize{
+  width: 140px;
+  height: auto;
+  align-items: center;
+}
