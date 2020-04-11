@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Header from './common/Header'
 import SearchBar from './SearchBar'
 import PokemonContainer from './pokemons/PokemonContainer'
-import { Container, Row, Col } from "shards-react";
 
 class UserHomePage extends Component {
 
@@ -33,24 +32,16 @@ class UserHomePage extends Component {
 
     render() {
         // console.log(this.state);    
+        // debugger
         return (
             <>
-            <Container>
-                <Row>
-                    <Col >
-                        <Header/>
-                    </Col>
-                    <Col >
-                        <SearchBar searchTerm={this.state.searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-                    </Col>
-                </Row>
-
-                <Row>
-                        <Col>
-                            <PokemonContainer pokemons = {this.filteredPokemonArray()}/>
-                        </Col>
-                </Row>
-                </Container>
+            <div className='header'>
+                <Header />
+                <SearchBar searchTerm={this.state.searchTerm} changeSearchTerm={this.changeSearchTerm} />
+            </div>
+            <div className='pokeContainer'>
+                <PokemonContainer pokemons = {this.filteredPokemonArray()}/>
+            </div>
             </>
         )
     }

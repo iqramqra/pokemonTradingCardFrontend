@@ -1,30 +1,33 @@
 import React, { Component } from 'react'
 import Header from './common/Header'
 import PokemonCard from './pokemons/PokemonCard'
-import { Container, Row, Col } from "shards-react";
 
 class UserProfile extends Component {
-
     render() {
+        
+        let {username, bio, avatar, deck} = this.props.user
 
-        let {id, username, bio, avatar, decks} = this.props.user
+        let { pokecards } = deck
         // debugger
+
+        let  userPokecards = pokecards.map ( card => {
+            // console.log(card.pokemon.id); 
+            return < PokemonCard key={ card.pokemon.id} pokemon= {card.pokemon}/> 
+            
+        })
 
         return (
             <>
-            <Container>
-                <Row>
-                    <Col>
-                        <Header />
-                    </Col>
-                </Row>
-
-                <Row>
+                <Header />
+                <div>
                     <h1> {username}'s pokemons</h1>
                     <h3> FunFact: {bio}</h3>
-                    <img src = {avatar} alt={username} />
-                </Row>
-            </Container>
+                    <img className = 'avatar' src = {avatar} alt={username} />
+                </div>
+
+                <div>
+                    {userPokecards} 
+                </div>
             </>
         )
     }

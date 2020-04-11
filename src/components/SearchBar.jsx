@@ -1,6 +1,5 @@
 import React from 'react';
 import { sentenceCase } from "sentence-case";
-import { Form, FormInput } from "shards-react";
 
 class SearchBar extends React.Component {
 
@@ -11,16 +10,14 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <>
-        <Form>
-          <FormInput type="text" 
-            className="searchTerm" 
-            placeholder="Which Pokemon"
-            value={this.props.searchTerm} 
-            onChange={this.handleChange} 
-            />
-        </Form>
-      </>
+      <div className="search">
+       <input type="text"
+         className="searchTerm"
+         placeholder="Which Pokemon"
+         value={this.props.searchTerm}
+         onChange={this.handleChange}
+      />
+      </div>
     );
   }
 

@@ -14,8 +14,11 @@ class App extends React.Component{
     user: {
       username: '',
       bio: '',
-      avatar: '',
-      decks: []
+      avatar: ''
+    },
+    decks: {
+      user_id: '',
+      pokecards: []
     },
     token: ''
   }
@@ -77,7 +80,7 @@ class App extends React.Component{
   }
 
   renderProfile = (routerProps) => {
-    return <UserProfile user= {this.state.user}/>
+    return <UserProfile user={this.state.user}/>
   }
 
   render(){
