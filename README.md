@@ -1,6 +1,6 @@
 POKEMON TRADING CARD GONE VIRTUAL!
 
-Now you will be able to collect pokemons and keep track all the pokemons without have to worry about lossing or misplacing your cards! This application allows a user to sign up and have a collection of deck  that has many pokemons and be able to trade with other users. What are you waiting for? To start this application simply go to the backend(here) and fire up the server for the backend. Then cd into the front-end and type 'npm start' to start collecting/trading pokemons!
+Now you will be able to collect pokemons and keep track all the pokemons without have to worry about lossing or misplacing your cards! This application allows a user to sign up and have a collection of deck  that has many pokemons and be able to trade with other users. What are you waiting for? To start this application simply go to the backend(https://github.com/iqramqra/pokemonTradingCardBackend) and fire up the server for the backend. Then cd into the front-end and type 'npm start' to start collecting/trading pokemons!
 
 User Story
 
