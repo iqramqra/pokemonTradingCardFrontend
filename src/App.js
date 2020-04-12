@@ -8,6 +8,8 @@ import UserHomePage from './components/UserHomePage'
 import UserProfile from './components/UserProfile'
 import NotFound from './components/NotFountPage'
 
+import { Container } from '@material-ui/core'
+
 class App extends React.Component{
 
   state = {
@@ -86,6 +88,7 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
+      <Container>
         <Switch>
           {/* <Route path ='/' exact component={ HomePage }/> */}
           <Route exact path ='/' render={ this.renderLoginForm}/>
@@ -94,6 +97,7 @@ class App extends React.Component{
           <Route path ='/home' component={UserHomePage} />
           <Route component={NotFound}/>
         </Switch> 
+        </Container>
       </div>
     );
   }
