@@ -24,10 +24,10 @@ class PokemonCard extends React.Component {
                     <div className="back">
                         <h1 className='titleCardBack'>{name}</h1>
                         <h3 className='pokeInfoCard'>Pokemon Type:</h3>
-                        <h3 className='pokeInfoCard'>{pokemon_type}</h3>
+                        <h3 className='pokeInfoCard'>{pokemon_type.join(', ')}</h3>
                         <h3 className='pokeInfoCard'>Weakness</h3>
-                        <h3 className='pokeInfoCard'>{weaknesses}</h3>
-                        {/* <h3 className='pokeInfoCard'>{weaknesses.join(', ')}</h3> */}
+                        {/* <h3 className='pokeInfoCard'>{weaknesses}</h3> */}
+                        <h3 className='pokeInfoCard'>{weaknesses.join(', ')}</h3>
                         <h3 className='pokeInfoCard'>HEALTH POINTS</h3>
                         <h3 className='pokeInfoCard'>{hp}</h3>
 

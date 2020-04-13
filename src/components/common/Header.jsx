@@ -1,16 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import AppBar from '@material-ui/core/AppBar';
 
 function Header() {
-  const activeStyle = {color: 'Orange'}
+  // const activeStyle = {color: 'Orange'}
   return (
-    <nav>
-      <NavLink activeStyle={activeStyle} exact to="/home">Home</NavLink> 
-      {" | "}
-      <NavLink activeStyle={activeStyle} to="/profile">Profile</NavLink>
-      {" | "}
-      <NavLink activeStyle={activeStyle} exact to="/">Logout</NavLink>
-    </nav>
+
+    <AppBar position="static">
+
+      <nav>
+        <NavLink exact to="/home">Home</NavLink> 
+        {" | "}
+        <NavLink to="/profile">Profile</NavLink>
+        {" | "}
+        <NavLink exact to="/">Logout</NavLink>
+      </nav>
+
+    </AppBar>
   );
 }
 
