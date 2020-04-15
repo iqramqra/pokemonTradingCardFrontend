@@ -79,7 +79,6 @@ class App extends React.Component{
     .then(r => r.json())
     .then(results => console.log(results))
   }
-
   // Create a new Register Form
   renderRegisterForm = () => {
     return <SignUp handleSubmit={this.handleRegister}/>
@@ -91,7 +90,6 @@ class App extends React.Component{
 
   renderProfile = (routerProps) => {
     return <UserProfile user={this.state.user} deleteUser={this.deleteUser}/>
-    
   }
 
   render(){
