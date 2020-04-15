@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './common/Header'
 import PokemonCard from './pokemons/PokemonCard'
-import { Avatar } from '@material-ui/core';
+import { Avatar } from '@material-ui/core'
 
 class UserProfile extends Component {
 

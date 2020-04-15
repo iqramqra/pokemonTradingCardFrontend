@@ -32,24 +32,21 @@ class RegisterForm extends Component {
         <div className='appAside'>
           <h5>POKEMON TCG APPLICATION</h5>
         </div>
-
         <div className='appForm'>
           <div className='login100-form'>
-            <form onSubmit={this.handleSubmit}>
-                
-                <input className='input100' type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange}/>
-                
-                <input className='input100' type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange}/>
-                
-                <input className='input100' type="text" placeholder="One Fun Fact About Yourself" name="bio" value={bio} onChange={this.handleChange}/>
-                
-                <input className='input100' type="text" placeholder="Profile Picture Link" name="avatar" value={avatar} onChange={this.handleChange}/>
-                <button className='loginButton' type="submit" value="Submit">Register</button>
+            <form onSubmit={this.handleSubmit}>       
+              <input className='input100' type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange}/> 
+              <input className='input100' type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange}/>
+              <input className='input100' type="text" placeholder="A Fun Fact About You" name="bio" value={bio} onChange={this.handleChange}/>
+              <input className='input100' type="text" placeholder="Profile Picture Link" name="avatar" value={avatar} onChange={this.handleChange}/>
+              <button className='loginButton' type="submit" value="Submit">Register</button>
+              <button className='signUpButton'>
+                <Link to='/'> Sign In </Link>
+              </button>
             </form>
           </div>
-          <Link to='/'> Sign In </Link>
         </div>
-        </>
+      </>
     );
   }
 }
