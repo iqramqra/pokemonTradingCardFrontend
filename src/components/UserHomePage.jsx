@@ -13,7 +13,11 @@ class UserHomePage extends Component {
     componentDidMount(){
         fetch('http://localhost:3000/pokemons')
         .then (r => r.json())
-        .then (_pokemons => this.setState({pokemons: _pokemons}))
+        .then (_pokemons => 
+            this.setState({
+                pokemons: _pokemons
+            })
+        )
     }
 
     changeSearchTerm = (termFromChild) => {
@@ -31,18 +35,19 @@ class UserHomePage extends Component {
     }
 
     render() {
-        // console.log(this.state);    
+        console.log(this.props.user.deck);    
         // debugger
+
         return (
-            <>
+            <div className='globalCss'>
             <div className='header'>
                 <Header />
                 <SearchBar searchTerm={this.state.searchTerm} changeSearchTerm={this.changeSearchTerm} />
             </div>
             <div className='pokeContainer'>
-                <PokemonContainer pokemons = {this.filteredPokemonArray()}/>
+                <PokemonContainer pokemons = {this.filteredPokemonArray()} addPokemonCard = {this.props.addPokemonCard} user = {this.props.user}/>
             </div>
-            </>
+            </div>
         )
     }
 }

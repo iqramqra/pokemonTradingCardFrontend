@@ -10,6 +10,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
+      <div className = 'gloglobalCss'>
       <div className="search">
        <input type="text"
          className="searchTerm"
@@ -17,6 +18,7 @@ class SearchBar extends React.Component {
          value={this.props.searchTerm}
          onChange={this.handleChange}
       />
+      </div>
       </div>
     );
   }

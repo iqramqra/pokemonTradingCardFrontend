@@ -1,11 +1,25 @@
-.App {
+ .App {
   height: 100vh;
-  display: flex;
+  /* display: flex; */
   /* GLOBAL FONT COLOR */
+  /* color: #3D7DCA; */
+ } 
+
+ .globalCss{
+   display: flex;
+ }
+
+.homePage{
+  height: 100vh !important;
+  display: flex !important;
   color: #3D7DCA;
 }
 
 .appAside {
+
+  height: 100vh;
+  /* display: flex; */
+
   width: 50%;
   background-color: #3D7DCA;
   padding: 25px 40px;
@@ -21,16 +35,14 @@
 
 
 .appForm {
+
+  height: 100vh;
+  display: inline-flex;
+
   width: 50%;
   background-color: #ffffff;
   padding: 25px 40px;
   overflow: auto;
-}
-
-.pageSwitch {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10%;
 }
 
 .input100 {
@@ -75,6 +87,14 @@
 /* -----POKEMON CARD DESIGN-------- */
 
 .card {
+  /* display: flex; */
+  flex-direction: column;
+  overflow: hidden;
+  height: 200px;
+  width: 250px;
+  margin: 20px;
+  /* padding-top: 20px; */
+  /* border-radius: 12px; */
   display: -ms-flexbox;
   flex-wrap: inherit;
   width: 275px;
@@ -82,6 +102,9 @@
   margin: 10px;
   float: left;
   border: none;
+  margin-bottom: 40px;
+  text-align: center;
+  align-items: center;
 }
 
 .content {
@@ -107,8 +130,8 @@
   background: #ffffff;
   line-height: 300px;
   backface-visibility: hidden;
-  /* align-items: center; */
-  /* text-align: center; */
+  align-items: center;
+  text-align: center;
   /* font-size: 60px; */
   /* border-radius: 50px; */
 }
@@ -117,6 +140,7 @@
   text-align: center;
   backface-visibility: hidden;
   position: absolute;
+  align-items: center;
  
   /* bottom: 50px; */
 }
@@ -141,25 +165,35 @@
 }
 
 .tradeButton{
-  /* position: absolute;
-  bottom: 0; */
-  display: -ms-flexbox;
-  flex-wrap: inherit;
+  position: inherit; 
+  bottom: 0;
+  padding-right: 50%;
+  padding-left: 50%;
+  /* display: -ms-flexbox;
+  flex-wrap: inherit; */
   font-family: Montserrat-Bold;
   font-size: 15px;
   border: 1px solid #FFCB05;
-  width: 95%;
+  /* width: fit-content; */
   height: 50px;
   border-radius: 12px;
-  padding: 0 30px 0 53px;
+  /* padding: 0 30px 0 53px; */
   margin: 10px;
-  background: #FFCB05;
-  color: #003A70;
-  cursor: pointer;
-  position: bo;
+  background: #003A70;
+  color: #FFCB05 ;
+  /* cursor: pointer; */
 }
 
 /* POKEMON CONTAINER */
+
+.pokemonContainer{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  /* padding: 2000px; */
+  /* flex: 1; */
+}
+
 
 .signUpButton{
   text-align: center;

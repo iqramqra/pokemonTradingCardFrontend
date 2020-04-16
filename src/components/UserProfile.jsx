@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Header from './common/Header'
-import PokemonCard from './pokemons/PokemonCard'
+import UsersCard from './pokemons/PokemonCard'
 import { Avatar } from '@material-ui/core'
+
+import Button from '@material-ui/core/Button';
 
 class UserProfile extends Component {
 
@@ -11,28 +13,29 @@ class UserProfile extends Component {
 
     render() {
         
-        let {username, bio, avatar, deck} = this.props.user
-        let { pokecards } = deck
-        // debugger
-        let  userPokecards = pokecards.map ( card => {
-            // console.log(card.pokemon.id); 
-            return <PokemonCard key={ card.pokemon.id} pokemon= {card.pokemon}/> 
+        let {username, bio, avatar} = this.props.user
+    
+        let  userPokecards = this.props.user.deck.pokecards.map ( card => {
+            return <UsersCard key={ card.pokemon.id} pokemon= {card.pokemon}/> 
         })
 
+        console.log(this.props.user.deck.pokecards);
+        
         return (
-            <>
+            <div className='globalCss'>
                 <Header />
                 <div>
-                    <button onClick={this.handleClick}>Delete</button>
-                    <h1> {username}'s pokemons</h1>
-                    <h3> FunFact: {bio}</h3>
+                    <h5>Interesting fact</h5>
+                    <h6> {bio}</h6>
                     <Avatar variant="rounded" alt={username} src = {avatar}/>
+                    
+                    <Button variant="outlined" size="small" color="primary" onClick={this.handleClick}>Delete account</Button>
                 </div>
-
                 <div>
+                    <h1>{username}'s pokemons</h1>
                     {userPokecards} 
                 </div>
-            </>
+            </div>
         )
     }
 }

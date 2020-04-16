@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-import { Divider } from '@material-ui/core';
-
 class LoginForm extends Component {
   state = {
     username: "",
@@ -28,7 +26,7 @@ class LoginForm extends Component {
     // console.log(this.props);
     
     return (
-      <>
+      <div className="homePage">
       <div className='appAside'>
         <h5>POKEMON TCG APPLICATION</h5>
       </div>
@@ -38,9 +36,7 @@ class LoginForm extends Component {
           <form onSubmit={this.handleSubmit}>
             <input className='input100' type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange}/>
             <input className='input100' type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange}/>
-            <button className='loginButton' type="submit" value="Submit">Log In</button>
-            
-            <Divider variant="middle" flexItem='True' orientation='horizontal'/>
+            <button className='loginButton' type="submit" value="Submit">Log In</button>  
   
             <button className='signUpButton'>
               <Link to='/register'> Sign Up </Link>
@@ -48,7 +44,7 @@ class LoginForm extends Component {
           </form>    
         </div>
       </div>
-      </>
+      </div>
     );
   }
 }

@@ -28,10 +28,11 @@ class RegisterForm extends Component {
     let {username, password, bio, avatar} = this.state
 
     return (
-      <>
+      <div className='homePage'>
         <div className='appAside'>
           <h5>POKEMON TCG APPLICATION</h5>
         </div>
+
         <div className='appForm'>
           <div className='login100-form'>
             <form onSubmit={this.handleSubmit}>       
@@ -46,7 +47,7 @@ class RegisterForm extends Component {
             </form>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

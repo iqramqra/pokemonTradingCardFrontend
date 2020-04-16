@@ -1,6 +1,11 @@
 import React from 'react'
+import Button from '@material-ui/core/Button';
 
 class PokemonCard extends React.Component {
+
+    handleClick = () => {
+        this.props.addPokemonCard(this.props.pokemon.id)
+    }
 
     render() {  
         // THIS IS CODE CODE FOR ALL THE POKEMON CONTAINERS
@@ -11,7 +16,6 @@ class PokemonCard extends React.Component {
                 <div className="content">
                     <div className="front">
                         <img src={img} alt={name} />
-                    
                     </div>
                     <div className="back">
                         <h1 className='titleCardBack'>{name}</h1>
@@ -23,9 +27,9 @@ class PokemonCard extends React.Component {
                         <h3 className='pokeInfoCard'>{hp}</h3>
                     </div>
                  </div>
-            </div>
-            <div>
-                <button className='tradeButton'>Trade Card</button>
+                 <div>
+                 </div>
+                 <Button variant="contained" size="large" color='primary' onClick={this.handleClick}>COLLECT CARD</Button>
             </div>
             </>
         )

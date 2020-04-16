@@ -14,7 +14,10 @@ class App extends React.Component{
     user: {
       username: '',
       bio: '',
-      avatar: ''
+      avatar: '',
+      deck: {
+        pokecards: []
+      }
     },
     decks: {
       user_id: '',
@@ -31,6 +34,7 @@ class App extends React.Component{
         }
       })
     }
+
   }
 
   handleResponse = (response) => {
@@ -70,6 +74,28 @@ class App extends React.Component{
     .then(this.handleResponse)
   }
 
+  addPokemonCard = (pokemonID, deckID) => {
+    let newObject = {deck_id: deckID, pokemon_id: pokemonID}
+    fetch("http://localhost:3000/pokecards", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.token}`
+      },
+      body: JSON.stringify(newObject)
+    })
+    .then(r => r.json())
+    .then(results => {
+      let newArray = [...this.state.user.deck.pokecards, results]
+      // let newObject = [...this.state.user.deck, ...newArray]
+      // debugger
+      this.setState({
+        user: {...this.state.user, deck: {pokecards: newArray}}
+      })
+    })
+    // console.log(pokemonID, "PokemonID", deckID, "Deck ID")
+  }
+ 
   deleteUser = (userId) => {
     fetch(`http://localhost:3000/users/${userId}`, {
       method: "DELETE"
@@ -90,7 +116,14 @@ class App extends React.Component{
     return <UserProfile user={this.state.user} deleteUser={this.deleteUser}/>
   }
 
+  renderHomepage = (routerProps) => {
+    return <UserHomePage addPokemonCard={this.addPokemonCard} user={this.state.user} />
+  }
+
   render(){
+
+    // console.log(this.state.user.deck.pokecards);
+    
     return (
       <div className="App">
         <Switch>
@@ -98,7 +131,8 @@ class App extends React.Component{
           <Route exact path ='/' render={ this.renderLoginForm}/>
           <Route path ='/register' render={this.renderRegisterForm}/>
           <Route path ='/profile' render={this.renderProfile}/>
-          <Route path ='/home' component={UserHomePage} />
+          <Route path ='/home' render={this.renderHomepage} />
+          {/* <Route path ='/home' component={UserHomePage} /> */}
           <Route component={NotFound}/>
         </Switch> 
       </div>
