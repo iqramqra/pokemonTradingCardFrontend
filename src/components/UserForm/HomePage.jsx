@@ -28,7 +28,8 @@ class LoginForm extends Component {
     return (
       <div className="homePage">
       <div className='appAside'>
-        <h5>POKEMON TCG APPLICATION</h5>
+        <h1>Tradémon</h1>
+        <h6>Collect 'em all</h6>
       </div>
 
       <div className='appForm'>

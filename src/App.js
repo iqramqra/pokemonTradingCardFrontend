@@ -87,13 +87,10 @@ class App extends React.Component{
     .then(r => r.json())
     .then(results => {
       let newArray = [...this.state.user.deck.pokecards, results]
-      // let newObject = [...this.state.user.deck, ...newArray]
-      // debugger
       this.setState({
         user: {...this.state.user, deck: {pokecards: newArray}}
       })
     })
-    // console.log(pokemonID, "PokemonID", deckID, "Deck ID")
   }
  
   deleteUser = (userId) => {
