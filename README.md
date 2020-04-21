@@ -1,3 +1,12 @@
+
+Check out the backend here: ( https://github.com/iqramqra/pokemonTradingCardBackend )
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
