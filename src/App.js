@@ -33,6 +33,8 @@ class App extends React.Component{
           'Authorization': `Bearer ${localStorage.token}`
         }
       })
+      .then(r => r.json())
+      .then(this.handleResponse)
     }
 
   }
